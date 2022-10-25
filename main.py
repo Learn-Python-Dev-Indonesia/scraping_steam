@@ -24,13 +24,20 @@ def parse(data):
         price = game.find('div', {'class': 'col search_price  responsive_secondrow'})
 
         data_dict = {
-        'title': title,
-        'price': price,
-        'link' : link,
+            'title': title,
+            'price': price,
+            'link' : link,
         }
 
         result.append(data_dict)
-    return result
+        return result
+def output (datas : list):
+    for i in datas:
+        print(i)
 
 if __name__ == '__main__':
     data = get_data(url)
+
+    final_data = parse(data)
+
+    output(final_data)
